@@ -2,6 +2,7 @@ import React from "react";
 import { getImagePath } from "./getMovies";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import Image from "next/image";
 type Props = {
   movie: Movie;
   mediaType: string;
@@ -17,10 +18,12 @@ const CardDetail = async ({ movie, mediaType }: Props) => {
         href={`${href}${movie.id}`}
         className="relative rounded-lg overflow-hidden shadow-lg w-full h-auto"
       >
-        <img
+        <Image
           className="w-full h-64 object-fit"
           src={`${img}${imgPath}`}
           alt={movie.name}
+          width={200}
+          height={200}
         />
         <div className="p-4">
           <h3 className="text-md font-semibold py-1">
