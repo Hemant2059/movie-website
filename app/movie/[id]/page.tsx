@@ -5,7 +5,6 @@ import React from "react";
 const page = async ({ params }: { params: { id: number } }) => {
   const data: movieDetail = await getMovieDetails("movie", params.id);
   const imgUrl = getImagePath();
-  console.log(imgUrl);
   return (
     <div className="py-10 bg-blue-200">
       <div className="container mx-auto flex gap-10 ">
@@ -22,7 +21,7 @@ const page = async ({ params }: { params: { id: number } }) => {
             <span className="mx-2 font-extrabold">.</span>
             <span>
               {data.genres.map((item) => {
-                return <span>{item.name},</span>;
+                return <span key={item.id}>{item.name},</span>;
               })}
             </span>
           </div>

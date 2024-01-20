@@ -28,7 +28,7 @@ const page = async ({ params }: { params: { id: number } }) => {
             <span className="mx-2 font-extrabold">.</span>
             <span>
               {data.genres?.map((item) => {
-                return <span>{item.name},</span>;
+                return <span key={item.id}>{item.name},</span>;
               })}
             </span>
           </div>
@@ -55,7 +55,10 @@ const page = async ({ params }: { params: { id: number } }) => {
         <div className="flex gap-2 flex-wrap">
           {data.seasons.map((item) => {
             return (
-              <div className="rounded-lg overflow-hidden shadow-lg h-auto md:w-[200px]  ">
+              <div
+                className="rounded-lg overflow-hidden shadow-lg h-auto md:w-[200px]  "
+                key={item.id}
+              >
                 <Image
                   src={`${imgUrl}${item.poster_path}`}
                   width={200}
