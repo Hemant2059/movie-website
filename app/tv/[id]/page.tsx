@@ -7,7 +7,7 @@ const page = async ({ params }: { params: { id: number } }) => {
   const imgUrl = getImagePath();
   const imgPath = data.poster_path || data.backdrop_path;
   return (
-    <div className="py-10 bg-blue-200">
+    <div className="py-10">
       <div className="container mx-auto md:flex gap-10 ">
         <div>
           <Image

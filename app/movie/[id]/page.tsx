@@ -6,8 +6,8 @@ const page = async ({ params }: { params: { id: number } }) => {
   const data: movieDetail = await getMovieDetails("movie", params.id);
   const imgUrl = getImagePath();
   return (
-    <div className="py-10 bg-blue-200">
-      <div className="container mx-auto flex gap-10 ">
+    <div className="py-10 ">
+      <div className="container mx-auto flex flex-col md:flex-row gap-10 ">
         <Image
           src={`${imgUrl}${data.poster_path}`}
           width={300}
